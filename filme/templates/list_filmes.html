@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<table>
+    <tr>
+        <td>id</td>
+        <td>filme</td>
+        <td>quantidade</td>
+        <td>preço</td>
+    </tr>
+    {% for filme in filmes %}
+    <tr>
+        <td>{{ filme.id}}</td>
+        <td>{{ filme.filme}}</td>
+        <td>{{ filme.quantidade}}</td>
+        <td>{{ filme.preco}}</td>
+    </tr>
+    {% endfor %}
+</table>
+   
+{% endblock %}
