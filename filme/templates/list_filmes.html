@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
+<br>
+<a href="{% url 'filme:new_filmes' %}">Novo</a>
 <table>
     <tr>
-        <td>id</td>
-        <td>filme</td>
-        <td>quantidade</td>
-        <td>preço</td>
+        <td>ID</td>
+        <td>Filme</td>
+        <td>Quantidade</td>
+        <td>Preço</td>
     </tr>
     {% for filme in filmes %}
     <tr>
-        <td>{{ filme.id}}</td>
-        <td>{{ filme.filme}}</td>
-        <td>{{ filme.quantidade}}</td>
-        <td>{{ filme.preco}}</td>
+        <td>{{ filme.id }}</td>
+        <td>{{ filme.filme }}</td>
+        <td>{{ filme.quantidade }}</td>
+        <td>{{ filme.preco }}</td>
     </tr>
     {% endfor %}
 </table>
