@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<br>
+<a href="{% url 'filme:new_filmes' %}">Novo</a><!-- forma de chamar a url do novo, puxando no url -->
+ <!-- forma de chamar a url do novo, puxando no url -->
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Filme</td>
+        <td>Quantidade</td>
+        <td>Preço</td>
+    </tr>
+    {% for filme in filmes %}
+    <tr>
+        <td>{{ filme.id }}</td>
+        <td>{{ filme.filme }}</td>
+        <td>{{ filme.genero }}</td>
+        <td>{{ filme.quantidade }}</td>
+        <td>{{ filme.preco }}</td>
+        <td><a href="{% url 'filme:update_filmes' filme.id %}">Alterar</a></td>
+        <td><a href="{% url 'filme:delete_filmes' filme.id %}">Deletargit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+   
+{% endblock %}
